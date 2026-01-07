@@ -247,9 +247,9 @@ function showSettings() {
                         <p class="mb-0">Anda login sebagai Administrator di Sistem Informasi Stok Barang Toko Cahaya Elektronik</p>
                         <p class="text-muted mt-2">
                             <i class="fas fa-calendar me-1"></i>
-                            <?php echo date('d F Y'); ?> | 
-                            <i class="fas fa-clock me-1"></i>
-                            <?php echo date('H:i:s'); ?>
+                            <?php echo date('d F Y'); ?> 
+                            
+                           
                         </p>
                     </div>
                 </div>
@@ -390,8 +390,8 @@ function showSettings() {
                 <div class="card">
                     <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
                         <h5 class="mb-0"><i class="fas fa-history me-2"></i>AKTIVITAS TERBARU</h5>
-                        <button class="btn btn-light btn-sm" onclick="location.reload()">
-                            <i class="fas fa-sync-alt"></i> Refresh
+                        
+                            
                         </button>
                     </div>
                     <div class="card-body">
@@ -481,7 +481,7 @@ function showSettings() {
             <div class="row">
                 <div class="col-md-12 text-center">
                     <small class="text-muted">
-                        <i class="fas fa-copyright"></i> <?php echo date('Y'); ?> - Sistem Informasi Stok Barang Elektronik Sei Batang Hari
+                        <i class="fas fa-copyright"></i> <?php echo date('Y'); ?> - Sistem Informasi Stok Barang toko cahaya eloktronik
                         | Login sebagai: <?php echo htmlspecialchars($_SESSION['nama_lengkap']); ?>
                         | <i class="fas fa-server"></i> <?php echo mysqli_get_host_info($koneksi); ?>
                     </small>
