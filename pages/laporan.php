@@ -375,7 +375,7 @@ if (!empty($_GET['penerima'])) {
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="grafik-tab" data-bs-toggle="tab" data-bs-target="#grafik" type="button">
-                                    <i class="fas fa-chart-line me-1"></i> Grafik
+                                 
                                 </button>
                             </li>
                         </ul>
