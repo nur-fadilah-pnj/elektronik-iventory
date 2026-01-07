@@ -420,8 +420,8 @@ if (!empty($_GET['penerima'])) {
                                             </select>
                                         </div>
                                         <div class="col-md-3">
-                                            <button class="btn btn-primary w-100" onclick="filterStok()">
-                                                <i class="fas fa-filter me-1"></i> Terapkan Filter
+                                            
+                                                
                                             </button>
                                         </div>
                                     </div>
