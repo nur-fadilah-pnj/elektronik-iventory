@@ -42,7 +42,7 @@ if (!function_exists('isLoggedIn')) {
 if (!function_exists('requireLogin')) {
     function requireLogin() {
         if (!isLoggedIn()) {
-            $redirect = isset($_SERVER['PHP_SELF']) && strpos($_SERVER['PHP_SELF'], 'pages/') !== false ? '../login.php' : 'login.php';
+            $redirect = isset($_SERVER['PHP_SELF']) && strpos($_SERVER['PHP_SELF'], 'pages/') !== false ? '../login.php' : 'home.php';
             header('Location: ' . $redirect);
             exit();
         }
