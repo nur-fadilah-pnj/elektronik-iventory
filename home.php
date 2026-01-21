@@ -1,17 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko Cahaya Elektronik - Solusi Elektronik Terpercaya</title>
+    <title>CAHAYA ELEKTRONIK - Solusi Elektronik Terpercaya</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         :root {
@@ -21,7 +20,6 @@
             --gold: #f1c40f;
             --light: #f8f9fa;
             --dark: #2c3e50;
-            --gray: #7f8c8d;
         }
 
         body {
@@ -30,13 +28,12 @@
             line-height: 1.6;
         }
 
-        /* Header & Navigation */
+        /* Header */
         header {
             background: linear-gradient(135deg, var(--primary) 0%, #1a2530 100%);
             color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
+            padding: 20px 0;
+            position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -48,53 +45,47 @@
             padding: 0 20px;
         }
 
-        .nav-container {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
         }
 
-        .logo-icon {
-            font-size: 2rem;
+        .logo span {
             color: var(--gold);
         }
 
-        .logo-text h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
 
-        .logo-text span {
-            color: var(--gold);
-        }
-
-        .logo-text p {
-            font-size: 0.8rem;
-            opacity: 0.8;
-        }
-
+        /* Navigation */
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 30px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
-            padding: 5px 0;
+            padding: 8px 0;
             position: relative;
+            transition: color 0.3s;
         }
 
         nav a:hover {
+            color: var(--gold);
+        }
+
+        nav a.active {
             color: var(--gold);
         }
 
@@ -109,62 +100,29 @@
             transition: width 0.3s;
         }
 
-        nav a:hover::after {
+        nav a:hover::after,
+        nav a.active::after {
             width: 100%;
         }
 
-        .cta-button {
+        .login-btn {
             background: var(--secondary);
             color: white;
+            border: none;
             padding: 10px 25px;
-            border-radius: 30px;
-            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            transition: background 0.3s;
         }
 
-        .cta-button:hover {
+        .login-btn:hover {
             background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 180px 0 120px;
-            text-align: center;
-            margin-top: 80px;
-        }
-
-        .hero h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            opacity: 0.9;
-        }
-
-        .highlight {
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-        /* Features Section */
-        .features {
+        /* Sections */
+        section {
             padding: 80px 0;
-            background: var(--light);
         }
 
         .section-title {
@@ -172,137 +130,103 @@
             margin-bottom: 50px;
         }
 
-        .section-title h2 {
+        .section-title h1 {
             font-size: 2.5rem;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .section-title p {
-            color: var(--gray);
-            max-width: 600px;
+            color: #666;
+            max-width: 700px;
             margin: 0 auto;
+        }
+
+        /* Hero Section */
+        #beranda {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* Features Section */
+        #tentang {
+            background: var(--light);
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
 
         .feature-card {
             background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
         }
 
         .feature-card h3 {
             color: var(--primary);
-            margin-bottom: 15px;
+            margin: 20px 0 15px;
             font-size: 1.5rem;
         }
 
-        /* Products Preview */
-        .products {
-            padding: 80px 0;
+        .feature-card p {
+            color: #666;
         }
 
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .product-img {
-            height: 200px;
-            background: linear-gradient(45deg, #3498db, #2ecc71);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-category {
+        .feature-icon {
+            font-size: 2.5rem;
             color: var(--secondary);
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .product-name {
-            color: var(--primary);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .product-price {
-            color: var(--accent);
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 15px;
         }
 
         /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background: var(--light);
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .testimonial-card {
             background: white;
             padding: 30px;
-            border-radius: 15px;
+            border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin: 20px;
             position: relative;
         }
 
         .testimonial-card::before {
             content: '"';
-            font-size: 5rem;
+            font-size: 4rem;
             color: var(--secondary);
             opacity: 0.2;
             position: absolute;
-            top: -10px;
+            top: 10px;
             left: 20px;
         }
 
         .testimonial-text {
             font-style: italic;
             margin-bottom: 20px;
+            color: #555;
         }
 
         .testimonial-author {
@@ -321,143 +245,108 @@
             justify-content: center;
             color: white;
             font-weight: bold;
+            font-size: 1.2rem;
         }
 
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--primary) 0%, #1a2530 100%);
+        .author-info h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        #kontak {
+            background: var(--primary);
             color: white;
-            text-align: center;
         }
 
-        .cta-section h2 {
-            font-size: 2.5rem;
+        #kontak .section-title h1,
+        #kontak .section-title p {
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
             margin-bottom: 20px;
         }
 
-        .cta-section p {
-            max-width: 600px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-top: 5px;
         }
 
         /* Footer */
         footer {
             background: #1a2530;
             color: white;
-            padding: 60px 0 30px;
+            padding: 40px 0;
+            text-align: center;
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .footer-column h3 {
-            color: var(--gold);
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
+        .footer-content p {
             margin-bottom: 10px;
+            opacity: 0.9;
         }
 
-        .footer-column a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s;
+        .heart {
+            color: var(--accent);
+            animation: heartbeat 1.5s infinite;
         }
 
-        .footer-column a:hover {
-            color: var(--gold);
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
-        .contact-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            nav ul {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: var(--primary);
+            .header-content {
                 flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 40px;
-                transition: left 0.3s;
+                gap: 20px;
             }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title h1 {
+                font-size: 2rem;
+            }
+        }
 
-            nav ul.active {
-                left: 0;
-            }
-
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-                padding: 0 20px;
-            }
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -465,52 +354,45 @@
     <!-- Header & Navigation -->
     <header>
         <div class="container">
-            <div class="nav-container">
+            <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <div class="logo-text">
-                        <h1><span>CAHAYA</span> ELEKTRONIK</h1>
-                        <p>Solusi Elektronik Terpercaya</p>
-                    </div>
+                    <h1><span>CAHAYA</span> ELEKTRONIK</h1>
+                    <p>Solusi Elektronik Terpercaya</p>
                 </div>
-
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-
+                
                 <nav>
-                    <ul id="navMenu">
-                        <li><a href="#" class="active">Beranda</a></li>
-                        <li><a href="#">Produk</a></li>
-                        <li><a href="#">Kategori</a></li>
-                        <li><a href="#">Tentang Kami</a></li>
-                        <li><a href="#">Kontak</a></li>
-                        <li><a href="#" class="cta-button"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <ul>
+                        <li><a href="#beranda" class="active">Beranda</a></li>
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                        <li><button class="login-btn" onclick="window.location.href='login.php'">Login</button></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section (Beranda) -->
+    <section id="beranda">
         <div class="container">
-            <h2>Selamat Datang di <span class="highlight">Toko Cahaya Elektronik</span></h2>
-            <p>Tempat terbaik untuk semua kebutuhan elektronik Anda. Dari gadget terkini hingga peralatan rumah tangga premium, kami menyediakan produk berkualitas dengan harga terbaik.</p>
-            <a href="#" class="cta-button"><i class="fas fa-shopping-cart"></i> Belanja Sekarang</a>
-            <a href="#" class="cta-button" style="background: transparent; border: 2px solid white;"><i class="fas fa-info-circle"></i> Pelajari Lebih Lanjut</a>
+            <div class="hero-content">
+                <h1>Selamat Datang di Toko Cahaya Elektronik</h1>
+                <p>Tempat terbaik untuk semua kebutuhan elektronik Anda. Dari gadget terkini hingga peralatan rumah tangga premium, kami menyediakan produk berkualitas dengan harga terbaik.</p>
+                <button class="login-btn" onclick="window.location.href='login.php'" style="font-size: 1.1rem; padding: 12px 30px;">
+                    <i class="fas fa-sign-in-alt"></i> Login ke Dashboard
+                </button>
+            </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- Tentang Kami Section -->
+    <section id="tentang">
         <div class="container">
             <div class="section-title">
-                <h2>Mengapa Memilih Kami?</h2>
+                <h1>Mengapa Memilih Kami?</h1>
                 <p>Kami berkomitmen memberikan pengalaman belanja elektronik terbaik untuk Anda</p>
             </div>
+            
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -519,6 +401,7 @@
                     <h3>Garansi Resmi</h3>
                     <p>Semua produk dilengkapi dengan garansi resmi dari distributor untuk memberikan kepastian bagi pelanggan.</p>
                 </div>
+                
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-shipping-fast"></i>
@@ -526,6 +409,7 @@
                     <h3>Gratis Ongkir</h3>
                     <p>Gratis pengiriman untuk pembelian di atas Rp 1.000.000 ke seluruh Indonesia dengan layanan cepat.</p>
                 </div>
+                
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-headset"></i>
@@ -537,89 +421,35 @@
         </div>
     </section>
 
-    <!-- Products Preview -->
-    <section class="products">
+    <!-- Testimonials Section -->
+    <section>
         <div class="container">
             <div class="section-title">
-                <h2>Produk Unggulan Kami</h2>
-                <p>Temukan koleksi elektronik terbaru dan terpopuler</p>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">LAPTOP & KOMPUTER</div>
-                        <h3 class="product-name">MacBook Air M2</h3>
-                        <div class="product-price">Rp 18.500.000</div>
-                        <a href="#" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Detail</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">SMARTPHONE</div>
-                        <h3 class="product-name">iPhone 15 Pro Max</h3>
-                        <div class="product-price">Rp 24.999.000</div>
-                        <a href="#" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Detail</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-tv"></i>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">TELEVISI</div>
-                        <h3 class="product-name">Samsung QLED 4K 55"</h3>
-                        <div class="product-price">Rp 12.750.000</div>
-                        <a href="#" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Detail</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">AKSESORIS</div>
-                        <h3 class="product-name">Smart Watch Pro</h3>
-                        <div class="product-price">Rp 3.500.000</div>
-                        <a href="#" class="cta-button" style="padding: 8px 20px; font-size: 0.9rem;">Detail</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Apa Kata Pelanggan Kami</h2>
+                <h1>Apa Kata Pelanggan Kami</h1>
                 <p>Testimoni dari pelanggan yang puas dengan layanan kami</p>
             </div>
-            <div class="features-grid">
+            
+            <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-text">
                         "Pelayanan sangat memuaskan! Barang sampai dengan cepat dan kondisi bagus. Garansi resmi membuat belanja di sini sangat terpercaya."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">AS</div>
-                        <div>
+                        <div class="author-info">
                             <h4>Ahmad Syafii</h4>
                             <p>Pelanggan sejak 2022</p>
                         </div>
                     </div>
                 </div>
+                
                 <div class="testimonial-card">
                     <div class="testimonial-text">
                         "Harga kompetitif dan produk original. Saya sudah beberapa kali belanja di sini untuk kebutuhan elektronik kantor, selalu puas dengan layanannya."
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">SD</div>
-                        <div>
+                        <div class="author-info">
                             <h4>Sari Dewi</h4>
                             <p>Business Owner</p>
                         </div>
@@ -629,13 +459,51 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Kontak Section -->
+    <section id="kontak">
         <div class="container">
-            <h2>Siap Memulai Pengalaman Belanja Elektronik Terbaik?</h2>
-            <p>Bergabunglah dengan ribuan pelanggan yang telah mempercayai kebutuhan elektronik mereka pada kami. Kualitas terjamin, harga terbaik.</p>
-            <a href="#" class="cta-button"><i class="fas fa-user-plus"></i> Daftar Sekarang</a>
-            <a href="#" class="cta-button" style="background: transparent; border: 2px solid white; margin-left: 15px;"><i class="fas fa-phone-alt"></i> Hubungi Kami</a>
+            <div class="section-title">
+                <h1>Kontak Kami</h1>
+                <p>Hubungi kami untuk informasi lebih lanjut</p>
+            </div>
+            
+            <div class="contact-content">
+                <div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h3>Alamat</h3>
+                            <p>Jl. Elektronik No. 123, Jakarta Pusat</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h3>Telepon</h3>
+                            <p>(021) 1234-5678</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@cahayaelektronik.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h3>Jam Operasional</h3>
+                            <p>Senin-Minggu, 08:00-21:00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -643,103 +511,73 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Toko Cahaya Elektronik</h3>
-                    <p>Solusi lengkap untuk semua kebutuhan elektronik Anda. Berpengalaman sejak 2010 melayani pelanggan dengan produk berkualitas dan layanan terbaik.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Menu Cepat</h3>
-                    <ul>
-                        <li><a href="#">Beranda</a></li>
-                        <li><a href="#">Produk Elektronik</a></li>
-                        <li><a href="#">Promo & Diskon</a></li>
-                        <li><a href="#">Tentang Kami</a></li>
-                        <li><a href="#">Syarat & Ketentuan</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Kontak Kami</h3>
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Jl. Elektronik No. 123, Jakarta Pusat</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <span>(021) 1234-5678</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <span>info@cahayaelektronik.com</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-clock"></i>
-                        <span>Buka: Senin-Minggu, 08:00-21:00 WIB</span>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
                 <p>&copy; 2026 Toko Cahaya Elektronik. Hak Cipta Dilindungi.</p>
-                <p>Developed with <i class="fas fa-heart" style="color: #e74c3c;"></i> for better shopping experience</p>
+                <p>Developed with <span class="heart">❤️</span> for better shopping experience</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Smooth scroll dengan offset untuk header tetap
+        document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
+                
                 const targetId = this.getAttribute('href');
                 if(targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
+                    // Hitung offset untuk header yang tetap
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                     
-                    // Close mobile menu if open
-                    navMenu.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    // Update active nav item
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
                 }
             });
         });
         
-        // Add scroll effect to header
+        // Update active nav item saat scroll
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if(window.scrollY > 100) {
-                header.style.background = 'rgba(44, 62, 80, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, var(--primary) 0%, #1a2530 100%)';
-                header.style.backdropFilter = 'none';
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPosition = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if(scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                        if(link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Highlight active section on page load
+        window.addEventListener('load', () => {
+            const currentHash = window.location.hash;
+            if(currentHash) {
+                const targetLink = document.querySelector(`nav a[href="${currentHash}"]`);
+                if(targetLink) {
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    targetLink.classList.add('active');
+                }
             }
         });
     </script>
